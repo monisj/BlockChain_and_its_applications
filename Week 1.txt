@@ -1,0 +1,86 @@
+Q1. What is security?
+Protection of systems, network and data from unauthorize harm and penetration.
+Encompasses CIA (Confidentiality, Integrity, Availability)
+Why need it?
+Without it your system is vulnerable to external attacks.
+Prevents breaches and data losses
+
+Use cases:
+Every thing that involves sensitive data transmission and systems.
+
+Confidentiality: (ECC,RSA,AES)
+Ensure sensitive data is accessible to authorize personal.
+
+Integrity:(SHA-256,SHA-1)
+Data is intact and accurate and cannot be penetrated or tempered.
+
+Availability:
+Resource is available when required.
+
+Security Challenges?
+1. Access Level
+2. Information Security
+3. Adaptive Security governance
+
+Access Level
+1. Authentication (Identify individuals/devices)
+2. Authorization (Determine the role of a particular identity)
+3. Access Control (Process to allocate the request of the resource to a particular individual)
+
+Security Governance/Adaptive Security Governance {Different devices having different security requirements)
+
+What is centralized security solution?
+A. Security controlled by a single entity (Cloudflare)
+
+
+Assignment 1:
+Create a Client-Server app that sends hello world from client to server (Done)
+
+Peer-to-Peer vs Centralized Approach
+
+For Centralized solution three modules are a must.
+1. Rule Engine (Defines access level, information security requirements in the form of security rules).
+2. Policy Engine (High level definition to security rules in the form of defining roles of legitimate users of interoperable services).
+3. Context Engine (Responsible for making contextual information of security rules and policies for interoperable services for service execution).
+
+
+Hash Funcitons.
+SHA-256 Algorithm (SEE)
+
+Assignment 2:
+The goal of this assignment is to create a rule-based engine for identity management within a client-server system. The client must hash its identity and 
+Send it to the server. The server will verify the hashed identity against a predefined list of authorized identities. If the identity is valid, the client
+is allowed to send messages, otherwise reject the message.
+
+Symmetric cryptosystems
+A single key shared between two identities for encryption and decryption of information
+Downsides. A interception between the entities can happen when key exchange is happening. (Eavesdropping)
+
+
+Assuming we have two nodes A and B
+Both have two keys (+ public , - private)
+
+A wants to send a message to B. So utilizes the B's public key which anyone can use and sends the information to B
+
+B then receives it and decrypts it via his own private key.
+
+The benefit of this system is that private keys are not stored centrally reducing load on the servers.
+There is however a central repository for public keys which is visible to all users and available to users.
+
+The upshot is that yes any one can use another nodes key but its useless to another node as it doesn't have the private key to decrypt it.
+
+Data Structures for Security.
+1. Having a structure that handles data in terms of processing, storing and delivering data is crucial.
+Create a ledger by utilizing a linked list
+
+Challenge-1
+A1 can its data only
+A2 can see it data only
+A3 can see it data
+
+Challenge-2
+Public and private keys mechanism
+
+Challenge-3
+Who is responsible to maintain the address of Linked List. 
+
