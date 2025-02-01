@@ -1,0 +1,42 @@
+import socket
+import json
+from cryptography.fernet import Fernet
+
+# Define the secret key (must match the server's key)
+SECRET_KEY = b'a4bAiveLU4JBCPS-OGi7iAPeutxQGWlKnfKC6_k-N8c='  # Replace this with the key from the server
+fernet = Fernet(SECRET_KEY)
+
+# Function to send a signed payload and receive a response
+def send_signed_message(sender, receiver, message,sec):
+    client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    client_socket.connect(('localhost', 65432))
+
+    # Create the payload
+    payload = json.dumps({
+        "sender": sender,
+        "receiver": receiver,
+        "message": message
+        # "sign": str(sec)
+    }).encode()
+
+    print(payload)
+    # Encrypt the payload using Fernet
+    encrypted_payload = fernet.encrypt(payload)
+    print("Encrypting sign from client =",encrypted_payload)
+    # Send the encrypted payload to the server
+    client_socket.sendall(encrypted_payload)
+
+    # Receive and print the response
+    response = client_socket.recv(1024).decode()
+    print(f"Server response: {response}")
+
+    # Close the socket
+    client_socket.close()
+
+# Sending a signed message from A to B
+print("A sending signed message to B...")
+send_signed_message("A", "B", "Hello securely from A!",SECRET_KEY)
+
+# Sending a signed message from B to A
+print("\nB sending signed message to A...")
+send_signed_message("B", "A", "Hello securely from B!",SECRET_KEY)

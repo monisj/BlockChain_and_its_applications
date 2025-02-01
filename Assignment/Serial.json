@@ -1,6 +1,1 @@
-{
-  "head": {
-    "previous": null,
-    "data": null,
-    "next": {
-      "previous": 
+"{\"sender\": \"B\", \"receiver\": \"A\", \"message\": \"Hello from B!\"}"

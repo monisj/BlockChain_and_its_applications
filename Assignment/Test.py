@@ -67,8 +67,4 @@ traverse_linked_list(linked_list["head"],hash_data)
 modify(linked_list, "MSG 4")
 traverse_linked_list(linked_list["head"],hash_data)
 
-# # Convert back to JSON if needed
-# updated_json_data = json.dumps(linked_list, indent=2)
-# print("\nUpdated JSON representation:\n", updated_json_data)
 
-# print(linked_list)

@@ -1,97 +1,59 @@
 import socket
+import json
 import hashlib
 
-# Predefined list of authorized hashed identities (e.g., hashed usernames)
-authorized_identities = {
-    hashlib.sha256("A1".encode()).hexdigest(),
-    hashlib.sha256("A2".encode()).hexdigest(),
-    hashlib.sha256("A3".encode()).hexdigest(),
-}
+# Store the linked list and hash map on the server
+linked_list = {"head": None}
+Hash = {}
 
-# Dictionary to store linked lists for each client
-client_data = {}
+# Function to add a new element to the linked list
+def add_element(new_data):
+    data_hash = hashlib.sha256(new_data.encode()).hexdigest()
+    Hash[data_hash] = new_data
 
-# Linked list node
-class Node:
-    def __init__(self, data):
-        self.data = data
-        self.next = None
+    prev = None
+    new_node = {"previous": prev, "data": data_hash, "next": None}
+    if linked_list["head"] is None:  # If the list is empty
+        linked_list["head"] = new_node
+    else:
+        current_node = linked_list["head"]
+        while current_node["next"] is not None:
+            current_node = current_node["next"]
+        current_node["next"] = new_node
+        new_node["previous"] = current_node
 
-# Linked list class
-class LinkedList:
-    def __init__(self):
-        self.head = None
+    return data_hash
 
-    def append(self, data):
-        new_node = Node(data)
-        if not self.head:
-            self.head = new_node
-        else:
-            current = self.head
-            while current.next:
-                current = current.next
-            current.next = new_node
+# Function to retrieve the message using the hash
+def get_message(data_hash):
+    if data_hash in Hash:
+        return Hash[data_hash]
+    return "Message not found"
 
-    def display(self):
-        messages = []
-        current = self.head
-        while current:
-            messages.append(current.data)
-            current = current.next
-        return messages
-
-# Create a socket object
+# Server setup
 server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+server_socket.bind(('localhost', 65432))
+server_socket.listen(1)
 
-# Define the server address and port
-host = '127.0.0.1'
-port = 12345
-
-# Bind the socket to the address and port
-server_socket.bind((host, port))
-
-# Listen for incoming connections
-server_socket.listen(5)
-print(f"Server listening on {host}:{port}...")
+print("Server is listening on port 65432...")
 
 while True:
-    # Accept a connection from a client
-    client_socket, client_address = server_socket.accept()
-    print(f"Connection established with {client_address}")
+    conn, addr = server_socket.accept()
+    print(f"Connected by {addr}")
 
-    # Receive the hashed identity from the client
-    hashed_identity = client_socket.recv(1024).decode('utf-8')
-    print(f"Received hashed identity: {hashed_identity}")
+    # Receive message from the client
+    data = conn.recv(1024).decode()
+    if not data:
+        break
 
-    # Verify the hashed identity
-    if hashed_identity in authorized_identities:
-        print("Client authorized.")
-        client_socket.send("Authorized".encode('utf-8'))
-
-        # Initialize a linked list for the client if it doesn't exist
-        if hashed_identity not in client_data:
-            client_data[hashed_identity] = LinkedList()
-
-        while True:
-            # Receive a message from the client
-            message = client_socket.recv(1024).decode('utf-8')
-            if message.lower() == "exit":
-                break
-
-            # Append the message to the client's linked list
-            client_data[hashed_identity].append(message)
-            print(f"Stored message for {hashed_identity}: {message}")
-            
-            # Send a confirmation to the client
-            client_socket.send("Message stored successfully.".encode('utf-8'))
-
-        # Send the client's messages back
-        messages = client_data[hashed_identity].display()
-        client_socket.send(f"Your messages: {messages}".encode('utf-8'))
+    # Check if the client sent a hash or a new message
+    if data.startswith("HASH:"):
+        hash_value = data.split("HASH:")[1]
+        message = get_message(hash_value)
+        conn.sendall(message.encode())
     else:
-        print("Client not authorized.") #just as a test if unknown user enters the systems
-        client_socket.send("Unauthorized".encode('utf-8'))
+        # Add the new message and get the hash
+        msg_hash = add_element(data)
+        conn.sendall(f"Message received and stored. Hash: {msg_hash}".encode())
 
-    # Close the connection
-    client_socket.close()
-    print("Dictornay=",client_data)
+    conn.close()
