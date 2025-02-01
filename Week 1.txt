@@ -3,7 +3,7 @@ Protection of systems, network and data from unauthorize harm and penetration.
 Encompasses CIA (Confidentiality, Integrity, Availability)
 Why need it?
 Without it your system is vulnerable to external attacks.
-Prevents breaches and data losses
+Prevents breaches and data losses.
 
 Use cases:
 Every thing that involves sensitive data transmission and systems.
