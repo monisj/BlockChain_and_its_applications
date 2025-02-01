@@ -1,43 +1,6 @@
 {
   "head": {
-    "data": "HELLO WORLD",
+    "previous": null,
+    "data": null,
     "next": {
-      "data": "TEST",
-      "next": {
-        "data": 12,
-        "next": {
-          "data": "NEW ELEMENT",
-          "next": null,
-          "previous": {
-            "data": 12,
-            "next": null,
-            "previous": {
-              "data": "TEST",
-              "next": null,
-              "previous": {
-                "data": "HELLO WORLD",
-                "next": null,
-                "previous": null
-              }
-            }
-          }
-        },
-        "previous": {
-          "data": "TEST",
-          "next": null,
-          "previous": {
-            "data": "HELLO WORLD",
-            "next": null,
-            "previous": null
-          }
-        }
-      },
-      "previous": {
-        "data": "HELLO WORLD",
-        "next": null,
-        "previous": null
-      }
-    },
-    "previous": null
-  }
-}
+      "previous": 
