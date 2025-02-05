@@ -64,7 +64,7 @@ print("\nLinked list after adding a new element:")
 traverse_linked_list(linked_list["head"],hash_data)
 
 #Trying to modify an element
-modify(linked_list, "MSG 4")
+modify(linked_list, "MSG 4") #Try Modifying this message in the linked list
 traverse_linked_list(linked_list["head"],hash_data)
 
 

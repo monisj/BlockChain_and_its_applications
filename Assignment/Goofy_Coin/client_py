@@ -3,7 +3,7 @@ import json
 from cryptography.fernet import Fernet
 
 # Define the secret key (must match the server's key)
-SECRET_KEY = b'a4bAiveLU4JBCPS-OGi7iAPeutxQGWlKnfKC6_k-N8c='  # Replace this with the key from the server
+SECRET_KEY = ''  # Replace this with the key from the server
 fernet = Fernet(SECRET_KEY)
 
 # Function to send a signed payload and receive a response
