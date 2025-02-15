@@ -20,8 +20,8 @@ class BlockchainServer(threading.Thread):
         self.val=val
     
     def run(self):
-        time.sleep(self.val)  # Simulating network delay
         start_time = time.time()
+        time.sleep(self.val)  # Simulating network delay
         nonce, hash_result = self.proof_of_work(self.transactions)
         end_time = time.time()
         computational_time = end_time - start_time
@@ -54,8 +54,8 @@ class BlockchainServer(threading.Thread):
 # Simulate multiple servers handling a transaction
 num_servers = 3  
 transaction_data = "Shehbaz"
-delay=10
-servers = [BlockchainServer(i, transaction_data,delay+i+1) for i in range(num_servers)]
+delay=2
+servers = [BlockchainServer(i, transaction_data,delay+i+5) for i in range(num_servers)]
 
 for server in servers:
     server.start()
@@ -67,3 +67,7 @@ for server in servers:
 print("\nFinal Ledger:")
 for entry in ledger:
     print(entry)
+
+
+
+#Need to implement verification of the block from the server who had one and add it to the blockchain
