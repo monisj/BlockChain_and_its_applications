@@ -68,11 +68,15 @@ class BlockchainServer(threading.Thread):
                     "hash": verified_hash
                 })
                 print(f"Block verified and added to ledger by Server {self.server_id}.")
+                print(f"Server Transaction {transaction_data}.")
+                print(f"Server nonce {verified_nonce}.")
+                print(f"Server Hash {verified_hash}")
         else:
             print("Block verification failed.")
     
     def verify_block(self, nonce, hash_result):
         block_data = f"{self.transactions}{nonce}".encode()
+        print(block_data)
         return hashlib.sha256(block_data).hexdigest() == hash_result
 
 # Simulate multiple servers handling a transaction
