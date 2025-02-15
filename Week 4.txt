@@ -1,0 +1,116 @@
+Consensus algorithm
+1.New transactions are broadcast to all nodes
+2. Each node collects new transactions into a block
+3. In each round a random node gets to broadcast its block
+
+4. Other nodes accept the block only if all transactions in it are valid (unspent, valid signatures)
+
+5. Nodes express their acceptance of the block by including its hash in the next block they create
+
+Consensus algorithms are essential for blockchain networks as they ensure all participants agree on the 
+current state of the distributed ledger. Here are the most common consensus algorithms used in blockchain:
+
+1. Proof of Work (PoW)
+Used by: Bitcoin, Ethereum (before ETH 2.0)
+How it Works: Miners solve complex cryptographic puzzles to validate transactions and add new blocks.
+Pros: Secure and decentralized.
+Cons: High energy consumption, slower transaction speed.
+
+2. Proof of Stake (PoS)
+Used by: Ethereum 2.0, Cardano, Solana
+How it Works: Validators are chosen based on the amount of cryptocurrency they stake as collateral.
+Pros: Energy efficient, faster transactions.
+Cons: Wealthier participants have more influence.
+
+Proof of Work (PoW) Consensus Algorithm
+Overview
+Proof of Work (PoW) is the original consensus algorithm used in blockchain technology, 
+introduced by Bitcoin in 2009. It is designed to secure the network by requiring participants (miners)
+ to solve complex mathematical problems before adding a block to the blockchain.
+
+How Proof of Work Works
+Transaction Pool
+
+Users broadcast transactions to the network.
+Transactions are collected into a block by miners.
+Cryptographic Puzzle (Mining)
+
+Miners compete to solve a complex hash puzzle using computational power.
+The puzzle involves finding a nonce (random number) that, when combined with the block's data and passed
+ through a cryptographic hash function (SHA-256 for Bitcoin), produces a hash that meets the network’s difficulty target.
+Proof Verification
+
+Once a miner finds a valid solution, they broadcast it to the network.
+Other nodes verify the solution quickly (easy to verify, hard to solve).
+Block Addition & Reward
+
+If verified, the new block is added to the blockchain.
+The winning miner receives a block reward (e.g., Bitcoin rewards) and transaction fees.
+Difficulty Adjustment
+
+The network adjusts the mining difficulty periodically (every 2016 blocks in Bitcoin) to maintain a constant block time 
+(10 minutes for Bitcoin).
+Key Features of PoW
+✔ Security: Difficult to alter past transactions (requires re-mining all subsequent blocks).
+✔ Decentralization: Any node with computational power can participate.
+✔ Sybil Attack Resistance: Attackers need enormous computing power to control the network.
+
+Disadvantages of PoW
+❌ High Energy Consumption: Mining requires massive amounts of electricity.
+❌ Centralization Risk: Large mining pools dominate, reducing decentralization.
+❌ Scalability Issues: Slow transaction processing compared to newer consensus mechanisms.
+
+Examples of PoW-Based Blockchains
+🔹 Bitcoin (BTC) – Uses SHA-256 hashing algorithm.
+🔹 Ethereum (ETH) – Used PoW until it transitioned to Proof of Stake (PoS) in Ethereum 2.0.
+🔹 Litecoin (LTC) – Uses Scrypt hashing algorithm for faster block generation.
+🔹 Dogecoin (DOGE) – Initially a joke but uses PoW similar to Litecoin.
+
+51% Attack: The Security Risk
+If a single entity controls more than 50% of the network's computational power, they can:
+
+Modify transaction history.
+Prevent new transactions from being confirmed.
+Double-spend coins.
+However, in large networks like Bitcoin, such an attack is economically unfeasible due to the enormous mining cost.
+
+Conclusion
+Proof of Work remains one of the most secure blockchain consensus mechanisms but is increasingly being replaced by more 
+energy-efficient alternatives like Proof of Stake (PoS) due to its high computational and energy costs.
+
+
+Cryptographic Nonce: Definition & Use in Proof of Work (PoW)
+A cryptographic nonce is a random or pseudo-random number used only once in cryptographic operations. In blockchain and Proof of Work (PoW) systems, the nonce is a crucial component in mining.
+
+Nonce in Proof of Work (PoW)
+In PoW, the nonce is a variable that miners change repeatedly while attempting to find a valid block hash that meets the network’s difficulty target.
+
+Process of Finding a Valid Nonce
+Block Data Preparation
+
+Miners take the block's transactions and metadata (previous block hash, timestamp, Merkle root, etc.).
+A nonce is added to the block header as a variable.
+Hashing Attempt
+
+Miners hash the entire block header (including the nonce) using a cryptographic hash function (e.g., SHA-256 for Bitcoin).
+The result is a block hash.
+Difficulty Check
+
+If the block hash is below the difficulty target (i.e., it has a required number of leading zeros), the block is valid.
+If not, the miner increments the nonce and tries again.
+Winning the Block
+
+The first miner to find a valid nonce broadcasts the new block to the network.
+Other nodes verify the solution, and if correct, the block is added to the blockchain.
+The successful miner is rewarded with a block reward + transaction fees.
+Example: Bitcoin Nonce Calculation
+Bitcoin uses SHA-256 as its hashing function.
+
+Block Header Fields:
+Previous Block Hash
+Merkle Root (transactions)
+Timestamp
+Nonce (changing value)
+Difficulty Target
+
+unless there are six confirmations the block won't be added in the chain.
