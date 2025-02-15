@@ -114,3 +114,9 @@ Nonce (changing value)
 Difficulty Target
 
 unless there are six confirmations the block won't be added in the chain.
+
+Lab 3 Tasks
+All servers will be thread (environment many threads many servers)
+all servers will have a common ledger
+If any transaction is made the POW algorithm is initiated in all servers (add a small delay to all the servers (as a baseline))
+If any node which is selected first (display selected , start time , end time and computational time) {append after the result}
