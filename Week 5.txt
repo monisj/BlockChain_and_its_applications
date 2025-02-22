@@ -1,0 +1,7 @@
+Usecase-1:
+Bitcoin's consensus algorithm relies on cryptographic security and decentralized validation to prevent malicious
+activities, 
+
+Steps:
+1. Every bitcoin transaction requires a valid digital signature from the rightful owner.
+2. Even if Alice is chosen to propose the next block, she cannot forge another user's signature.
