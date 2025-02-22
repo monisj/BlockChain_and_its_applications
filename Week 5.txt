@@ -5,3 +5,63 @@ activities,
 Steps:
 1. Every bitcoin transaction requires a valid digital signature from the rightful owner.
 2. Even if Alice is chosen to propose the next block, she cannot forge another user's signature.
+
+Mitigates Denial of service attacks:
+1. Blocks proposers Rotates Randomly.
+    a. Alice might reduce to incluude Bob's transactions in her proposed block.
+    b. However, the next block proposer is Randomly selected, meaning Bob's transaction
+       will be included by another honest role.
+2. Network Redundancy Prevents Censorship.
+    a. Multiple node validate transactions.
+    b. Even if alice ignores Bob's transaction it will remain in the pool until a fair
+       minner includes it.
+3. transaction Persistence Ensures Inclusion.
+
+
+Double Spending Attack (Prevention)
+Prevent a node from making the same block being added in the chain. 
+(Happens at the verification level).
+We verify the coin chain (Every unique coin chain)
+Preventing duplicates of coin existing in the chain.
+
+(SEE 51% attack)
+
+Block Reward Mechanism:
+Gets some kind of a reward through a special coin-creation transaction.
+
+Bitcoin Halving Process:
+1. Initially, the block reward was 50BTC, but it halves every 210,000 block (~4 years)
+2. The reward was 25BTC at the time of writting(2013) currently 6.25 BTC as of 2024, plus transaction fee
+3. This ensures a finite total supply of 21 million bitcoin.
+4. The reward is assigned to an address choosen by the miner, usually their own.
+
+What are bitcoin pools?
+Bitcoin mining pools are groups of miners who collaborate to solve blocks and share the rewards proportionally based on their contributed computing power. 
+Instead of mining solo, where only the miner who solves the block gets the reward, pools allow participants to earn more consistent payouts by 
+pooling their computational resources.
+
+How Bitcoin Mining Pools Work
+Pooling Resources – Miners contribute their hashing power to a central pool.
+Collective Mining – The pool coordinates mining efforts and distributes computational work.
+Block Discovery – If the pool successfully mines a block, it receives the Bitcoin block reward (currently 6.25 BTC as of 2024, plus transaction fees).
+Payout Distribution – The reward is divided among pool members based on their contributed computing power.
+Types of Bitcoin Mining Pools
+Pay-per-Share (PPS) – Miners receive a fixed payout for each share submitted, regardless of whether the pool finds a block.
+Proportional – Rewards are distributed proportionally based on each miner's contributed work after a block is found.
+Pay-per-Last-N-Shares (PPLNS) – Similar to proportional but considers only the last N shares submitted before a block is found.
+Solo Mining Pools – Pool where miners still mine independently but combine efforts to increase chances of finding a block.
+Popular Bitcoin Mining Pools
+F2Pool – One of the largest pools globally.
+Antpool – Operated by Bitmain, a leading mining hardware manufacturer.
+Slush Pool – One of the first Bitcoin mining pools.
+BTC.com – A major mining pool offering multiple payout methods.
+ViaBTC – Offers both PPS and PPLNS options.
+Advantages of Mining Pools
+✅ Steady Income – Regular payouts instead of waiting to win a block. 
+✅ Reduced Variance – Less dependency on luck compared to solo mining. 
+✅ Lower Costs – Miners with limited resources can still participate in Bitcoin mining.
+
+Disadvantages of Mining Pools
+❌ Pool Fees – Most pools charge a percentage of the earnings. 
+❌ Centralization Risks – Large pools could potentially influence Bitcoin's network. 
+❌ Lower Individual Rewards – Compared to solo mining, rewards are shared.
