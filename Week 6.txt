@@ -57,13 +57,13 @@ Design an:
 2. Introduction
 3. Motivation
 4. Contributions (New framework) , can be many more
-5. Literature review (2024,2025)
+5. Literature review (2024,2025) upto 24 references
 
 See the overleaf template
 Before MID (AI Content and Plagerism should be < 10)
 
 Should also provide example in code (MVP Concept and Evaluation (Cover CIA) Should the blockchain be visable).
-
+Display proof of concept via MVP
 Time: 2 Weeks
 
 
