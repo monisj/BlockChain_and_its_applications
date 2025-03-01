@@ -1,0 +1,30 @@
+Discussion of (Sort of a project) Block chain application alogside report
+In Bitcoin (Limits one transaction per block)
+
+1. Bitcoin scripting (stack-based, Forth-like programming language used in Bitcoin transactions to define spending conditions.)
+2. Smart Contract (Smart contracts are self-executing contracts with the terms of the agreement directly written into code. 
+They run on blockchain networks, ensuring transparency, security, and automation.)
+
+Bitcoin scripting and smart contracts both enable programmability on blockchains, but they differ significantly in complexity and 
+functionality. Bitcoin scripting is a simple, stack-based programming language designed to facilitate transaction validation. 
+It is not Turing-complete, meaning it lacks the ability to perform loops or complex conditional logic. 
+It primarily supports basic functions like multi-signature transactions, hashlocks, and timelocks, making it useful for
+ security but not for building decentralized applications. Additionally, Bitcoin’s scripting follows a stateless model 
+ based on the UTXO (Unspent Transaction Output) system, meaning transactions do not store or update state on the blockchain.
+
+In contrast, smart contracts are fully programmable, Turing-complete, and capable of executing complex logic beyond simple transactions.
+ They can store and modify data on the blockchain, making them stateful. Smart contracts are written in languages like Solidity (Ethereum),
+  Rust (Solana), and Vyper, allowing developers to create decentralized applications (DApps) for financial services (DeFi), NFTs, 
+  governance (DAOs), and more. However, their flexibility also introduces security risks like re-entrancy attacks and logic errors. 
+  Unlike Bitcoin’s simple and linear scripting, smart contracts enable autonomous execution of predefined rules, making blockchain 
+  ecosystems more interactive and programmable.
+
+Merging Value where a wallet can record transactions from different entities. Its ledger would be different that a typical ledger.
+Merging values in Bitcoin typically refers to combining multiple unspent transaction outputs (UTXOs) into a single transaction. This can happen in two main ways:
+
+1. Standard UTXO Merging (Combining multiple inputs in a transaction)
+2. CoinJoin (Privacy-focused merging of multiple users' inputs)
+
+
+Joint Payment A joint payment (or multi-signature transaction) in Bitcoin allows multiple parties to control a single Bitcoin address. 
+This is typically implemented using Pay-to-Script-Hash (P2SH) or Pay-to-MultiSig (P2MS) scripts.
