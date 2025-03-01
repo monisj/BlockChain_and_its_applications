@@ -44,3 +44,29 @@ scriptsig = A scriptSig (unlocking script) is used in a Bitcoin transaction to
 prove ownership and unlock the corresponding UTXO (Unspent
 Transaction Output).
 
+Mid Paper (Important)
+30 marks
+
+(15 marks) outside of MID
+Create a group of 4 (I am doing solo so this rule is out)
+See the paper in the classroom (Get literature review)
+Get the problem statement to a smart city.
+Write a report (7 pages)
+Design an:
+1. Abstract
+2. Introduction
+3. Motivation
+4. Contributions (New framework) , can be many more
+5. Literature review (2024,2025)
+
+See the overleaf template
+Before MID (AI Content and Plagerism should be < 10)
+
+Should also provide example in code (MVP Concept and Evaluation (Cover CIA) Should the blockchain be visable).
+
+Time: 2 Weeks
+
+
+The rest of 15 marks are theoretical 
+Chapter 1 and Chapter 2:
+See all the lab assignments
