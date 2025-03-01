@@ -51,20 +51,21 @@ Proportional – Rewards are distributed proportionally based on each miner's co
 Pay-per-Last-N-Shares (PPLNS) – Similar to proportional but considers only the last N shares submitted before a block is found.
 Solo Mining Pools – Pool where miners still mine independently but combine efforts to increase chances of finding a block.
 Popular Bitcoin Mining Pools
+
 F2Pool – One of the largest pools globally.
 Antpool – Operated by Bitmain, a leading mining hardware manufacturer.
 Slush Pool – One of the first Bitcoin mining pools.
 BTC.com – A major mining pool offering multiple payout methods.
 ViaBTC – Offers both PPS and PPLNS options.
 Advantages of Mining Pools
-✅ Steady Income – Regular payouts instead of waiting to win a block. 
-✅ Reduced Variance – Less dependency on luck compared to solo mining. 
-✅ Lower Costs – Miners with limited resources can still participate in Bitcoin mining.
+Steady Income – Regular payouts instead of waiting to win a block. 
+Reduced Variance – Less dependency on luck compared to solo mining. 
+Lower Costs – Miners with limited resources can still participate in Bitcoin mining.
 
 Disadvantages of Mining Pools
-❌ Pool Fees – Most pools charge a percentage of the earnings. 
-❌ Centralization Risks – Large pools could potentially influence Bitcoin's network. 
-❌ Lower Individual Rewards – Compared to solo mining, rewards are shared.
+Pool Fees – Most pools charge a percentage of the earnings. 
+Centralization Risks – Large pools could potentially influence Bitcoin's network. 
+Lower Individual Rewards – Compared to solo mining, rewards are shared.
 
 
 
