@@ -28,3 +28,13 @@ Merging values in Bitcoin typically refers to combining multiple unspent transac
 
 Joint Payment A joint payment (or multi-signature transaction) in Bitcoin allows multiple parties to control a single Bitcoin address. 
 This is typically implemented using Pay-to-Script-Hash (P2SH) or Pay-to-MultiSig (P2MS) scripts.
+Essentially two people have access to the same account.
+
+OP_Code examples
+OP_O || OP_FALSE  (Pushes an empty value (false) onto the stack)
+OP_1 to OP_16 (Pushes number 1 to 16 onto the stack)
+OP_DUP (Duplicates the top stack item)
+OP_HASH160 (Hashes the top item using RIPEMD160(SHA256(x)))
+OP_EQUAL (Checks if the top two items of the stack are equal)
+OP_EQUALVERIFY (Same as OP_EQUAL but fails if false)
+OP_CHECKSIG (Verifies a digital signature)
