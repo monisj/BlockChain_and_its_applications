@@ -38,3 +38,9 @@ OP_HASH160 (Hashes the top item using RIPEMD160(SHA256(x)))
 OP_EQUAL (Checks if the top two items of the stack are equal)
 OP_EQUALVERIFY (Same as OP_EQUAL but fails if false)
 OP_CHECKSIG (Verifies a digital signature)
+
+Vout = representing the address i a single entity is sending multiple transactions.
+scriptsig = A scriptSig (unlocking script) is used in a Bitcoin transaction to
+prove ownership and unlock the corresponding UTXO (Unspent
+Transaction Output).
+
