@@ -1,7 +1,7 @@
 #Multichain work (included in mid)
 commands
 
-Locking script
+Locking script <Redeem script>
 OP_DUP OP_HASH160<Bob"s Public Key Hash>
 OP_EQUALVERIFY OP_CHECKSIG
 
@@ -16,3 +16,14 @@ hash of signature
 bob's public key
 bob's sig
 (See Slides)
+
+
+Escrow transaction:
+Image if two people have an agreement for a transaction but for some reason there is a conflict and no one is authorizing the transaction.
+A third party service would resolve this conflict keeping the trust intact.
+
+Script of Escrow <Locking script>
+OP_2(Two signatures) <Alice_PublicKey>
+<Bob_PublicKey>
+<Charlie_PublicKey> OP_3(three signatures) (See if the locking script has three public keys)
+OP_CHECKMULTISIG
