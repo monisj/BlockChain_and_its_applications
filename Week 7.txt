@@ -160,3 +160,41 @@ Unlike public blockchains like Bitcoin and Ethereum, MultiChain is a permissione
 Forks are less common because all nodes are typically controlled by an organization or a group of known participants.
 Changes are coordinated centrally, making it easier to manage upgrades without unintended forks.
 Hard forks are rare, but soft forks (parameter updates, feature enhancements) are more common.
+
+
+
+//listwallettransactions
+ multichain-cli chain12 listwallettransactions
+{"method":"listwallettransactions","params":[],"id":"63730277-1741423861","chain_name":"chain12"}
+
+[
+    {
+        "balance" : {
+            "amount" : 0, //need to add native currency
+            "assets" : [ //You can add assets
+            ]
+        },
+        "myaddresses" : [
+            "1FWrb7S3rNQ78Wqhc15BacocG1vfheUKs4k416"
+        ],
+        "addresses" : [
+        ],
+        "permissions" : [
+        ],
+        "items" : [
+        ],
+        "data" : [
+            "53504b62473045022100fe184425bacf0bb17d9ab76cf7be320552621c2d8bc28258b36fb411972e493302205a71461f0ea3e8ceec8f9184396b8a0afe93fdfb8cf8dad0f02b872169f3fa9d032103893de754fffec2146f32ddfc4d24028544640b98391a87e13d6770174d9d340a"
+        ], //data created when genesis block is created
+        "confirmations" : 33,
+        "generated" : true,
+        "blockhash" : "009a5bddc5b75067bd9eba337899782eef5b194a47e5684ff8d1dd0c3258202a",
+        "blockheight" : 1,
+        "blockindex" : 0,
+        "blocktime" : 1741423401,
+        "txid" : "9f58330468e73c1cf0564b2821691a0875f17c7ad3a5a5030aa35a740ffe4c75", //transaction id
+        "valid" : true,
+        "time" : 1741423401,
+        "timereceived" : 1741423401
+    }
+]
