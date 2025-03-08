@@ -1,0 +1,18 @@
+#Multichain work (included in mid)
+commands
+
+Locking script
+OP_DUP OP_HASH160<Bob"s Public Key Hash>
+OP_EQUALVERIFY OP_CHECKSIG
+
+Unlocking Script
+<Bob's Signature><Bob's Public Key>
+
+First unlock then lock
+Works like a stack
+
+hash of public key 
+hash of signature
+bob's public key
+bob's sig
+(See Slides)
