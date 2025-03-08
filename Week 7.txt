@@ -22,8 +22,21 @@ Escrow transaction:
 Image if two people have an agreement for a transaction but for some reason there is a conflict and no one is authorizing the transaction.
 A third party service would resolve this conflict keeping the trust intact.
 
-Script of Escrow <Locking script>
+Script of Escrow <Locking script/Redeem script>
 OP_2(Two signatures) <Alice_PublicKey>
 <Bob_PublicKey>
 <Charlie_PublicKey> OP_3(three signatures) (See if the locking script has three public keys)
 OP_CHECKMULTISIG
+
+
+Green Address Payment in Bitcoin
+A green address is a bitcoin transactioin method where a trusted third party such as an exchange or wallet provider co-signs transactions,
+allowing recipicants to accept them instantly, even before they are confirmed on the  blockchain.
+
+Locking script-Funds locked in green address
+OP_2 <Alice_PublicKey><Provider_PublicKey> OP_2 OP_CHECKMULTISIG
+
+OP_2 requires 2 valid signatures to spend Bitcoin
+<Alice_PublicKey>,<Provider_PublicKey> -> Two available public key.
+OP_2 -> exactly two public keys are involbed
+OP_CHECKMULTISIG -> Ensures both alice and green address signatures are verified via their hash to existing hash
