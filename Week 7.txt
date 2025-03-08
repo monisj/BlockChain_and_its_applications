@@ -40,3 +40,82 @@ OP_2 requires 2 valid signatures to spend Bitcoin
 <Alice_PublicKey>,<Provider_PublicKey> -> Two available public key.
 OP_2 -> exactly two public keys are involbed
 OP_CHECKMULTISIG -> Ensures both alice and green address signatures are verified via their hash to existing hash
+
+
+Efficicent Micro-Payments
+Prepaid phone services
+
+multichain-cli chain12 getinfo (run multichaind chain12 )
+{"method":"getinfo","params":[],"id":"34917752-1741423458","chain_name":"chain12"}
+
+{
+    "version" : "2.3.3",
+    "nodeversion" : 20303901,
+    "edition" : "Community",
+    "protocolversion" : 20013,
+    "chainname" : "chain12",
+    "description" : "MultiChain chain12",
+    "protocol" : "multichain",
+    "port" : 2651,
+    "setupblocks" : 60,
+    "nodeaddress" : "chain12@172.27.64.1:2651",
+    "burnaddress" : "1XXXXXXXGyXXXXXXBNXXXXXXegXXXXXXSW6wAR",
+    "incomingpaused" : false,
+    "miningpaused" : false,
+    "offchainpaused" : false,
+    "walletversion" : 60000,
+    "balance" : 0,
+    "walletdbversion" : 3,
+    "reindex" : false,
+    "blocks" : 6,
+    "chainrewards" : 0,
+    "streams" : 1,
+    "timeoffset" : 0,
+    "connections" : 0,
+    "proxy" : "",
+    "difficulty" : 5.96046447753906e-8,
+    "testnet" : false,
+    "keypoololdest" : 1741423400,
+    "keypoolsize" : 2,
+    "paytxfee" : 0,
+    "relayfee" : 0,
+    "errors" : ""
+}
+PS C:\Users\Monis\Desktop\MultiChaiin>
+
+Multichain Task
+This output is the result of the getinfo command from MultiChain, a private blockchain platform. MultiChain allows you to create and deploy permissioned blockchain networks.
+
+Here's what the key fields in the response mean:
+
+version: "2.3.3" → The version of MultiChain software running.
+nodeversion: 20303901 → Internal version identifier of the node.
+edition: "Community" → The edition of MultiChain (Community/Enterprise).
+protocolversion: 20013 → The protocol version being used.
+chainname: "chain12" → The name of the MultiChain blockchain network.
+description: "MultiChain chain12" → A description of the blockchain.
+protocol: "multichain" → Indicates that this is a MultiChain blockchain.
+port: 2651 → The network port being used by this blockchain node.
+setupblocks: 60 → The number of initial blocks configured during chain setup.
+nodeaddress: "chain12@172.27.64.1:2651" → The address of the node.
+burnaddress: "1XXXXXXXGyXXXXXXBNXXXXXXegXXXXXXSW6wAR" → The address where assets can be "burned" (removed from circulation).
+incomingpaused: false → Indicates whether the node is currently pausing incoming transactions.
+miningpaused: false → Indicates whether mining is paused.
+offchainpaused: false → Indicates whether off-chain transactions are paused.
+walletversion: 60000 → The version of the wallet software.
+balance: 0 → The balance of the wallet associated with this node.
+walletdbversion: 3 → The version of the wallet database.
+reindex: false → Whether the node is currently reindexing the blockchain data.
+blocks: 6 → The number of blocks currently stored on this node.
+chainrewards: 0 → The total amount of rewards issued on this blockchain.
+streams: 1 → The number of active data streams on the blockchain.
+timeoffset: 0 → The time offset between this node and the network.
+connections: 0 → The number of active connections to other nodes.
+proxy: "" → No proxy is configured.
+difficulty: 5.96046447753906e-8 → The mining difficulty level.
+testnet: false → Indicates that this is not a testnet.
+keypoololdest: 1741423400 → The timestamp of the oldest unused key in the keypool.
+keypoolsize: 2 → The number of keys available in the keypool.
+paytxfee: 0 → The transaction fee per kilobyte.
+relayfee: 0 → The minimum fee required for transactions to be relayed.
+errors: "" → No errors are reported.
