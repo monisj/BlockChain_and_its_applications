@@ -198,3 +198,158 @@ Hard forks are rare, but soft forks (parameter updates, feature enhancements) ar
         "timereceived" : 1741423401
     }
 ]
+
+
+
+//Hard forking
+multichain-cli chain12 getrawtransaction 9f58330468e73c1cf0564b2821691a0875f17c7ad3a5a5030aa35a740ffe4c75 1
+{"method":"getrawtransaction","params":["9f58330468e73c1cf0564b2821691a0875f17c7ad3a5a5030aa35a740ffe4c75",1],"id":"58695638-1741424003","chain_name":"chain12"}
+
+{
+    "hex" : "01000000010000000000000000000000000000000000000000000000000000000000000000ffffffff0a510101062f503253482fffffffff0200000000000000001976a9146b64bbc091db34d478dd469eb1084bae925c9c7488ac0000000000000000726a4c6f53504b62473045022100fe184425bacf0bb17d9ab76cf7be320552621c2d8bc28258b36fb411972e493302205a71461f0ea3e8ceec8f9184396b8a0afe93fdfb8cf8dad0f02b872169f3fa9d032103893de754fffec2146f32ddfc4d24028544640b98391a87e13d6770174d9d340a00000000",
+    "txid" : "9f58330468e73c1cf0564b2821691a0875f17c7ad3a5a5030aa35a740ffe4c75",
+    "version" : 1,
+    "locktime" : 0,
+    "vin" : [
+        {
+            "coinbase" : "510101062f503253482f",
+            "sequence" : 4294967295
+        }
+    ],
+    "vout" : [
+        {
+            "value" : 0,
+            "n" : 0,
+            "scriptPubKey" : {
+                "asm" : "OP_DUP OP_HASH160 6b64bbc091db34d478dd469eb1084bae925c9c74 OP_EQUALVERIFY OP_CHECKSIG",  //locking script
+                "hex" : "76a9146b64bbc091db34d478dd469eb1084bae925c9c7488ac",
+                "reqSigs" : 1,
+                "type" : "pubkeyhash",
+                "addresses" : [
+                    "1FWrb7S3rNQ78Wqhc15BacocG1vfheUKs4k416"
+                ]
+            }
+        },
+        {
+            "value" : 0,
+            "n" : 1,
+            "scriptPubKey" : {
+                "asm" : "OP_RETURN 53504b62473045022100fe184425bacf0bb17d9ab76cf7be320552621c2d8bc28258b36fb411972e493302205a71461f0ea3e8ceec8f9184396b8a0afe93fdfb8cf8dad0f02b872169f3fa9d032103893de754fffec2146f32ddfc4d24028544640b98391a87e13d6770174d9d340a",
+                "hex" : "6a4c6f53504b62473045022100fe184425bacf0bb17d9ab76cf7be320552621c2d8bc28258b36fb411972e493302205a71461f0ea3e8ceec8f9184396b8a0afe93fdfb8cf8dad0f02b872169f3fa9d032103893de754fffec2146f32ddfc4d24028544640b98391a87e13d6770174d9d340a",
+                "type" : "nulldata"
+            },
+            "data" : [
+                "53504b62473045022100fe184425bacf0bb17d9ab76cf7be320552621c2d8bc28258b36fb411972e493302205a71461f0ea3e8ceec8f9184396b8a0afe93fdfb8cf8dad0f02b872169f3fa9d032103893de754fffec2146f32ddfc4d24028544640b98391a87e13d6770174d9d340a"
+            ]
+        }
+    ],
+    "blockhash" : "009a5bddc5b75067bd9eba337899782eef5b194a47e5684ff8d1dd0c3258202a",
+    "confirmations" : 42,
+    "time" : 1741423401,
+    "blocktime" : 1741423401
+}
+
+
+
+Concept of Miners in MultiChain
+MultiChain is a permissioned blockchain, which means it does not have traditional miners like Bitcoin or Ethereum. Instead, it uses a controlled mining system where only approved nodes can generate blocks.
+
+How Mining Works in MultiChain
+Permissioned Miners: In MultiChain, only nodes that have been granted mining permissions (mine) can create new blocks.
+Consensus Algorithm: Instead of Proof of Work (PoW) like Bitcoin, MultiChain uses a Round-Robin Mining Consensus to ensure fair block generation among miners.
+Mining Diversity: MultiChain enforces a rule called mining-diversity, which ensures that multiple miners participate in the block creation process to prevent centralization.
+Key Aspects of Mining in MultiChain
+Feature	Description
+Mining Permission (mine)	Only nodes with this permission can generate blocks.
+Consensus Type	Round-robin mining (not PoW-based).
+Mining Diversity	Ensures block production is distributed among multiple nodes.
+No Competition	Unlike Bitcoin, MultiChain mining is cooperative, not competitive.
+Block Reward	MultiChain does not have native block rewards like Bitcoin.
+
+
+
+multichain-cli chain12 getaddresses
+{"method":"getaddresses","params":[],"id":"55144199-1741424425","chain_name":"chain12"}
+
+[
+    "1FWrb7S3rNQ78Wqhc15BacocG1vfheUKs4k416" //One wallet
+]
+
+
+PS C:\Users\Monis\Desktop\MultiChaiin> multichain-cli chain12 getnewaddress //create a new wallet
+{"method":"getnewaddress","params":[],"id":"91968749-1741424459","chain_name":"chain12"}
+
+1W9HwdNEDmR4e2UaZAtqUdm8UNmd1ie7uEC56f
+PS C:\Users\Monis\Desktop\MultiChaiin> multichain-cli chain12 getaddresses
+{"method":"getaddresses","params":[],"id":"15803704-1741424462","chain_name":"chain12"}
+
+[
+    "1FWrb7S3rNQ78Wqhc15BacocG1vfheUKs4k416", //Two wallets
+    "1W9HwdNEDmR4e2UaZAtqUdm8UNmd1ie7uEC56f"
+]
+
+
+
+multichain-cli chain12 issue <to-address> <asset-name> <quantity> <units> <can-be-reissued> <custom-fields>
+Example:
+multichain-cli chain12 issue 1FWrb7S3rNQ78Wqhc15BacocG1vfheUKs4k416 "Linus Coin" 1000 0.01
+{"method":"issue","params":["1FWrb7S3rNQ78Wqhc15BacocG1vfheUKs4k416","Linus Coin",1000,0.01],"id":"95967894-1741424668","chain_name":"chain12"}
+
+d43a9e93fc6ba700c4675db5f584533f3bf62f64426099a78b30508b42239d71
+
+multichain-cli chain12 listassets
+{"method":"listassets","params":[],"id":"42674336-1741424741","chain_name":"chain12"}
+
+[
+    {
+        "name" : "Linus Coin",
+        "issuetxid" : "d43a9e93fc6ba700c4675db5f584533f3bf62f64426099a78b30508b42239d71",
+        "assetref" : "60-266-15060",
+        "multiple" : 100,
+        "units" : 0.01,
+        "open" : false,
+        "restrict" : {
+            "send" : false,
+            "receive" : false,
+            "issue" : true
+        },
+        "fungible" : true,
+        "canopen" : false,
+        "canclose" : false,
+        "totallimit" : null,
+        "issuelimit" : null,
+        "details" : {
+        },
+        "issuecount" : 1,
+        "issueqty" : 1000,
+        "issueraw" : 100000,
+        "subscribed" : false
+    }
+]
+
+ multichain-cli chain12 getassetinfo "Linus coin"
+{"method":"getassetinfo","params":["Linus coin"],"id":"44846949-1741424787","chain_name":"chain12"}
+
+{
+    "name" : "Linus Coin",
+    "issuetxid" : "d43a9e93fc6ba700c4675db5f584533f3bf62f64426099a78b30508b42239d71",
+    "assetref" : "60-266-15060",
+    "multiple" : 100,
+    "units" : 0.01,
+    "open" : false,
+    "restrict" : {
+        "send" : false,
+        "receive" : false,
+        "issue" : true
+    },
+    "fungible" : true,
+    "canopen" : false,
+    "canclose" : false,
+    "totallimit" : null,
+    "issuelimit" : null,
+    "details" : {
+    },
+    "issuecount" : 1,
+    "issueqty" : 1000,
+    "issueraw" : 100000
+}
