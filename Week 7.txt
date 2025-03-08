@@ -353,3 +353,288 @@ multichain-cli chain12 listassets
     "issueqty" : 1000,
     "issueraw" : 100000
 }
+
+
+//Now if we compare it with the old transaction we now see a couple of things
+ multichain-cli chain12 listwallettransactions
+{"method":"listwallettransactions","params":[],"id":"49304788-1741424840","chain_name":"chain12"}
+
+[
+    {
+        "balance" : {
+            "amount" : 0,
+            "assets" : [
+            ]
+        },
+        "myaddresses" : [
+            "1FWrb7S3rNQ78Wqhc15BacocG1vfheUKs4k416"
+        ],
+        "addresses" : [
+        ],
+        "permissions" : [
+        ],
+        "items" : [
+        ],
+        "data" : [
+            "53504b62473045022100fe184425bacf0bb17d9ab76cf7be320552621c2d8bc28258b36fb411972e493302205a71461f0ea3e8ceec8f9184396b8a0afe93fdfb8cf8dad0f02b872169f3fa9d032103893de754fffec2146f32ddfc4d24028544640b98391a87e13d6770174d9d340a"
+        ],
+        "confirmations" : 70,
+        "generated" : true,
+        "blockhash" : "009a5bddc5b75067bd9eba337899782eef5b194a47e5684ff8d1dd0c3258202a",
+        "blockheight" : 1,
+        "blockindex" : 0,
+        "blocktime" : 1741423401,
+        "txid" : "9f58330468e73c1cf0564b2821691a0875f17c7ad3a5a5030aa35a740ffe4c75",
+        "valid" : true,
+        "time" : 1741423401,
+        "timereceived" : 1741423401
+    },
+    {
+        "balance" : {
+            "amount" : 0,
+            "assets" : [
+                {
+                    "name" : "Linus Coin",  //This was coinbase
+                    "assetref" : "60-266-15060",
+                    "qty" : 1000  //This was zero
+                }
+            ]
+        },
+        "myaddresses" : [
+            "1FWrb7S3rNQ78Wqhc15BacocG1vfheUKs4k416"
+        ],
+        "addresses" : [
+        ],
+        "permissions" : [
+        ],
+        "issue" : {
+            "name" : "Linus Coin",
+            "assetref" : "60-266-15060",
+            "multiple" : 100,
+            "units" : 0.01,
+            "open" : false,
+            "restrict" : {
+                "send" : false,
+                "receive" : false,
+                "issue" : true
+            },
+            "fungible" : true,
+            "canopen" : false,
+            "canclose" : false,
+            "totallimit" : null,
+            "issuelimit" : null,
+            "details" : {
+            },
+            "qty" : 1000,
+            "raw" : 100000,
+            "addresses" : [
+                "1FWrb7S3rNQ78Wqhc15BacocG1vfheUKs4k416"
+            ]
+        },
+        "items" : [
+        ],
+        "data" : [
+        ],
+        "confirmations" : 11,
+        "blockhash" : "0048944c823b6df039932149340ad11ab38b919ccaf141f118020477d9606881",
+        "blockheight" : 60,
+        "blockindex" : 1,
+        "blocktime" : 1741424689,
+        "txid" : "d43a9e93fc6ba700c4675db5f584533f3bf62f64426099a78b30508b42239d71",
+        "valid" : true,
+        "time" : 1741424668,
+        "timereceived" : 1741424668
+    }
+] 
+
+//This time block height would be different. 
+multichain-cli chain12 getrawtransaction d43a9e93fc6ba700c4675db5f584533f3bf62f64426099a78b30508b42239d71 1
+{"method":"getrawtransaction","params":["d43a9e93fc6ba700c4675db5f584533f3bf62f64426099a78b30508b42239d71",1],"id":"92875148-1741424934","chain_name":"chain12"}
+
+{
+    "hex" : "0100000001754cfe0f745aa30a03a5a5d37a7cf175081a6921284b56f01c3ce7680433589f000000006a47304402205bdd12b11e9bb0a767506dc6115a6f437924ef38af0f270acea15e2753c874be0220045c811cdbf1d1a2eeede7adab5cac4e7bf30b36d9aa189dae8df8f8dd4eaebe012103893de754fffec2146f32ddfc4d24028544640b98391a87e13d6770174d9d340affffffff0300000000000000002776a9146b64bbc091db34d478dd469eb1084bae925c9c7488ac0c73706b67a0860100000000007500000000000000001c1973706b6e0100010a4c696e757320436f696e00410464000000756a00000000000000001976a9146b64bbc091db34d478dd469eb1084bae925c9c7488ac00000000",
+    "txid" : "d43a9e93fc6ba700c4675db5f584533f3bf62f64426099a78b30508b42239d71",
+    "version" : 1,
+    "locktime" : 0,
+    "vin" : [
+        {
+            "txid" : "9f58330468e73c1cf0564b2821691a0875f17c7ad3a5a5030aa35a740ffe4c75",
+            "vout" : 0,
+            "scriptSig" : {
+                "asm" : "304402205bdd12b11e9bb0a767506dc6115a6f437924ef38af0f270acea15e2753c874be0220045c811cdbf1d1a2eeede7adab5cac4e7bf30b36d9aa189dae8df8f8dd4eaebe01 03893de754fffec2146f32ddfc4d24028544640b98391a87e13d6770174d9d340a",
+                "hex" : "47304402205bdd12b11e9bb0a767506dc6115a6f437924ef38af0f270acea15e2753c874be0220045c811cdbf1d1a2eeede7adab5cac4e7bf30b36d9aa189dae8df8f8dd4eaebe012103893de754fffec2146f32ddfc4d24028544640b98391a87e13d6770174d9d340a"
+            },
+            "sequence" : 4294967295
+        }
+    ],
+    "vout" : [
+        {
+            "value" : 0,
+            "n" : 0,
+            "scriptPubKey" : {
+                "asm" : "OP_DUP OP_HASH160 6b64bbc091db34d478dd469eb1084bae925c9c74 OP_EQUALVERIFY OP_CHECKSIG 73706b67a086010000000000 OP_DROP",
+                "hex" : "76a9146b64bbc091db34d478dd469eb1084bae925c9c7488ac0c73706b67a08601000000000075",
+                "reqSigs" : 1,
+                "type" : "pubkeyhash",
+                "addresses" : [
+                    "1FWrb7S3rNQ78Wqhc15BacocG1vfheUKs4k416"
+                ]
+            },
+            "assets" : [
+                {
+                    "name" : "Linus Coin",
+                    "issuetxid" : "d43a9e93fc6ba700c4675db5f584533f3bf62f64426099a78b30508b42239d71",
+                    "assetref" : "60-266-15060",
+                    "qty" : 1000,
+                    "raw" : 100000,
+                    "type" : "issuefirst"
+                }
+            ]
+        },
+        {
+            "value" : 0,
+            "n" : 1,
+            "scriptPubKey" : {
+                "asm" : "73706b6e0100010a4c696e757320436f696e00410464000000 OP_DROP OP_RETURN",
+                "hex" : "1973706b6e0100010a4c696e757320436f696e00410464000000756a",
+                "type" : "nulldata"
+            }
+        },
+        {
+            "value" : 0,
+            "n" : 2,
+            "scriptPubKey" : {
+                "asm" : "OP_DUP OP_HASH160 6b64bbc091db34d478dd469eb1084bae925c9c74 OP_EQUALVERIFY OP_CHECKSIG",
+                "hex" : "76a9146b64bbc091db34d478dd469eb1084bae925c9c7488ac",
+                "reqSigs" : 1,
+                "type" : "pubkeyhash",
+                "addresses" : [
+                    "1FWrb7S3rNQ78Wqhc15BacocG1vfheUKs4k416"
+                ]
+            }
+        }
+    ],
+    "issue" : {
+        "type" : "issuefirst",
+        "name" : "Linus Coin",
+        "multiple" : 100,
+        "open" : false,
+        "restrict" : {
+            "send" : false,
+            "receive" : false,
+            "issue" : true
+        },
+        "fungible" : true,
+        "canopen" : false,
+        "canclose" : false,
+        "totallimit" : null,
+        "issuelimit" : null,
+        "details" : {
+        }
+    },
+    "blockhash" : "0048944c823b6df039932149340ad11ab38b919ccaf141f118020477d9606881",
+    "confirmations" : 11,
+    "time" : 1741424689,
+    "blocktime" : 1741424689
+}
+
+
+Tasks :
+Burn all the assets 
+
+
+
+
+
+multichain-cli chain12 listassets
+{"method":"listassets","params":[],"id":"20019837-1741425380","chain_name":"chain12"}
+
+[
+    {
+        "name" : "Linus Coin",
+        "issuetxid" : "d43a9e93fc6ba700c4675db5f584533f3bf62f64426099a78b30508b42239d71",
+        "assetref" : "60-266-15060",
+        "multiple" : 100,
+        "units" : 0.01,
+        "open" : false,
+        "restrict" : {
+            "send" : false,
+            "receive" : false,
+            "issue" : true
+        },
+        "fungible" : true,
+        "canopen" : false,
+        "canclose" : false,
+        "totallimit" : null,
+        "issuelimit" : null,
+        "details" : {
+        },
+        "issuecount" : 1,
+        "issueqty" : 1000,
+        "issueraw" : 100000,
+        "subscribed" : false
+    },
+    {
+        "name" : "Maaz Coin",
+        "issuetxid" : "173ddce35856eab7ca7f59458f575461095d6d55140db773acf63d63a4cdfe22",
+        "assetref" : "71-265-15639",
+        "multiple" : 100,
+        "units" : 0.01,
+        "open" : false,
+        "restrict" : {
+            "send" : false,
+            "receive" : false,
+            "issue" : true
+        },
+        "fungible" : true,
+        "canopen" : false,
+        "canclose" : false,
+        "totallimit" : null,
+        "issuelimit" : null,
+        "details" : {
+        },
+        "issuecount" : 1,
+        "issueqty" : 10000,
+        "issueraw" : 1000000,
+        "subscribed" : false
+    }
+]
+
+//Getting the address
+multichain-cli chain12 getinfo
+{"method":"getinfo","params":[],"id":"77658619-1741425399","chain_name":"chain12"}
+
+{
+    "version" : "2.3.3",
+    "nodeversion" : 20303901,
+    "edition" : "Community",
+    "protocolversion" : 20013,
+    "chainname" : "chain12",
+    "description" : "MultiChain chain12",
+    "protocol" : "multichain",
+    "port" : 2651,
+    "setupblocks" : 60,
+    "nodeaddress" : "chain12@172.27.64.1:2651",
+    "burnaddress" : "1XXXXXXXGyXXXXXXBNXXXXXXegXXXXXXSW6wAR",
+    "incomingpaused" : false,
+    "miningpaused" : false,
+    "offchainpaused" : false,
+    "walletversion" : 60000,
+    "balance" : 0,
+    "walletdbversion" : 3,
+    "reindex" : false,
+    "blocks" : 81,
+    "chainrewards" : 0,
+    "assets" : 2,
+    "streams" : 1,
+    "timeoffset" : 0,
+    "connections" : 0,
+    "proxy" : "",
+    "difficulty" : 5.96046447753906e-8,
+    "testnet" : false,
+    "keypoololdest" : 1741423458,
+    "keypoolsize" : 2,
+    "paytxfee" : 0,
+    "relayfee" : 0,
+    "errors" : ""
+}
