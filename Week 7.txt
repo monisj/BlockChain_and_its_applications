@@ -22,7 +22,7 @@ Escrow transaction:
 Image if two people have an agreement for a transaction but for some reason there is a conflict and no one is authorizing the transaction.
 A third party service would resolve this conflict keeping the trust intact.
 
-Script of Escrow <Locking script/Redeem script>
+Script of Escrow <Locking script/Redeem script>:
 OP_2(Two signatures) <Alice_PublicKey>
 <Bob_PublicKey>
 <Charlie_PublicKey> OP_3(three signatures) (See if the locking script has three public keys)
