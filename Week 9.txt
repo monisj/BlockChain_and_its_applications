@@ -1,1 +1,180 @@
 Week 8 (digital wallets) I was absent so see this topic
+Today's topic:
+Multi Sig
+Online wallet
+
+On-Chain Example
+Scenario: Alice sends 1 BTC to Bob using the Bitcoin blockchain.
+
+Steps:
+Alice initiates a transaction from her wallet to send 1 BTC to Bob's wallet address.
+
+The transaction is broadcast to the Bitcoin network.
+
+Miners validate the transaction and add it to a new block.
+
+Once the block is confirmed, the transaction is permanently recorded on the blockchain.
+
+Bob can see the transaction publicly, and the funds are now his.
+
+✅ Benefits: Trustless, secure, publicly verifiable.
+⏳ Downside: Slower and can incur higher transaction fees.
+
+🔄 Off-Chain Example
+Scenario: Alice and Bob use a payment channel (like the Lightning Network on Bitcoin) or just agree informally.
+
+Example 1: Using a Payment Channel
+Alice and Bob open a payment channel by locking up 2 BTC on the Bitcoin blockchain (initial on-chain step).
+
+Over time, Alice sends Bob 1 BTC through signed off-chain transactions.
+
+These transactions aren’t broadcast to the blockchain.
+
+When they’re done, they close the channel, and the final balances (e.g., Alice: 1 BTC, Bob: 1 BTC) are settled on-chain.
+
+Example 2: Informal/Trusted Party
+Alice says to Bob: “I’ll give you 1 BTC tomorrow for your help today.”
+
+They don’t record anything on the blockchain, but they agree on it off-chain.
+
+Later, Alice may settle it by sending BTC on-chain — or they may keep it informal.
+
+⚡ Benefits: Faster, cheaper, private.
+⚠️ Downside: Requires trust (unless using tech like Lightning), and is not immediately final or recorded on the blockchain.
+
+
+On-Chain vs Off-Chain in Pakistan (Alice & Bob Style)
+🔗 On-Chain Transaction (Crypto Wallet to Wallet)
+Scenario:
+Alice lives in Lahore, Bob in Karachi.
+
+Both use self-custody wallets (like MetaMask, Trust Wallet, etc).
+
+Steps:
+Alice sends USDT or BTC from her wallet directly to Bob’s wallet address.
+
+The transaction is broadcast to the blockchain (Ethereum, Bitcoin, Tron, etc).
+
+Miners/validators confirm it.
+
+Bob sees the funds in his wallet.
+
+✅ Pros:
+
+Decentralized, no middleman.
+
+Borderless and direct.
+
+⚠️ Cons:
+
+Requires basic blockchain knowledge.
+
+Can incur network fees.
+
+Subject to volatility and risk of scams.
+
+🎯 Common Use Cases in Pakistan:
+
+Freelancers receiving crypto from global clients.
+
+Peer-to-peer (P2P) investments.
+
+Buying goods/services via crypto where accepted.
+
+🔄 Off-Chain Transaction (Inside Exchanges or P2P Apps)
+Option 1: Using Centralized Exchanges (e.g., Binance)
+Alice and Bob both have Binance accounts.
+
+Alice sends 100 USDT to Bob through Binance internal transfer (email or UID).
+
+Binance just updates the ledger — no blockchain interaction.
+
+✅ Fast and free
+⚠️ Requires trust in Binance
+
+Option 2: Local P2P Marketplaces (Binance P2P, LocalBitcoins, etc)
+Bob posts a USDT buy ad on Binance P2P.
+
+Alice agrees to sell and transfers USDT on-chain to Binance P2P escrow.
+
+Bob pays Alice via bank transfer or JazzCash/EasyPaisa (this part is off-chain fiat).
+
+Once confirmed, Binance releases crypto to Bob.
+
+🪙 Off-chain = PKR payment
+🔗 On-chain = crypto release from escrow
+
+🧠 Hybrid Flow in Real Life (Common in Pakistan)
+Step-by-step:
+
+Bob buys USDT from Binance P2P (pays PKR via bank).
+
+He sends USDT to Alice’s wallet (on-chain).
+
+Alice then off-ramps USDT back into PKR via another P2P trade.
+
+This means:
+
+PKR ↔️ Crypto is off-chain (done via fiat transfer).
+
+Crypto ↔️ Crypto can be on-chain (wallets) or off-chain (inside exchange).
+
+🇵🇰 Regulation Note:
+Crypto isn’t fully regulated or banned, but SBP (State Bank of Pakistan) has warned against its use.
+
+P2P and crypto use is common but informal.
+
+Most people use Binance, OKX, or Trust Wallet.
+
+People often use VPNs, Telegram/WhatsApp groups, or local OTC agents.
+
+
+
+OK what if the state bank is on chain and local banks are on chain ????
+On-Chain (SBP Level)
+This is when funds actually move across the core national settlement system, controlled by the State Bank of Pakistan.
+
+Example:
+Alice has an account at HBL, Bob has an account at UBL.
+
+Alice sends PKR 100,000 to Bob.
+
+Since they’re in different banks, the transaction must go through SBP’s RTGS system (Raast or PRISM).
+
+What happens:
+HBL asks SBP to settle the amount with UBL.
+
+SBP debits HBL’s account and credits UBL’s account — this is the on-chain settlement.
+
+UBL then credits Bob's account.
+
+✅ Trusted, centralized ledger
+⏳ Slower, but final
+📖 Officially recorded at national level
+
+🔄 Off-Chain (Local Bank Level)
+This is when the transaction happens inside the same bank, so SBP doesn't need to be involved.
+
+Example:
+Alice and Bob both use Meezan Bank.
+
+Alice sends Bob PKR 50,000.
+
+What happens:
+Meezan simply updates its internal ledger:
+
+Alice’s account is debited.
+
+Bob’s account is credited.
+
+No funds need to move through SBP.
+
+It’s faster, cheaper, and done entirely off-chain (i.e., off-SBP).
+
+✅ Fast & free
+⚠️ Not reflected on SBP ledger instantly
+
+Issues with on chain and off chain implementations
+1. we would need to create a node with many sub nodes with its own public and private key
+2. Issue with integrity (considering an off chain implementation) any one can change given correct credentials.
+3. In case of assets transfer of owner ship mechanisms would be required.
