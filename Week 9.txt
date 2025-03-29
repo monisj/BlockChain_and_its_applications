@@ -223,3 +223,22 @@ Alice → Bob both in Meezan Bank: SBP never sees it.
 
 It’s fully off-chain and may never hit the central ledger unless required for audit or compliance.
 
+Search proof of reserve
+Proof of Reserve (PoR) is a method used by centralized platforms (like crypto exchanges) to prove that they actually hold the funds (like BTC, ETH, USDT) they claim to have on behalf of their users.
+
+🔍 In Simple Terms:
+It's a public, cryptographic way to show:
+🏦 “Yes, we really have your money.”
+
+🔐 How It Works (Briefly):
+Reserves: The exchange publishes wallet addresses or uses cryptographic proofs to show how much crypto it holds.
+
+Liabilities: It also shows how much it owes to users (anonymously, via a Merkle Tree or similar method).
+
+Verification: Anyone can verify that reserves ≥ liabilities.
+
+✅ Why It Matters:
+Builds trust.
+Prevents fraud or mismanagement.
+Became important after cases like FTX collapse.
+
