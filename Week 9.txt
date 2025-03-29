@@ -178,3 +178,48 @@ Issues with on chain and off chain implementations
 1. we would need to create a node with many sub nodes with its own public and private key
 2. Issue with integrity (considering an off chain implementation) any one can change given correct credentials.
 3. In case of assets transfer of owner ship mechanisms would be required.
+
+All wallets provide bank-like services
+
+ In Crypto: Does Off-Chain Eventually Register On-Chain?
+✅ Sometimes — If it needs final settlement.
+Example 1: Lightning Network (Bitcoin)
+Alice and Bob exchange BTC off-chain via a payment channel.
+
+When they're done, the final balance is recorded on-chain when the channel closes.
+
+So yes — it eventually hits the blockchain.
+
+Example 2: Binance Internal Transfer
+Alice sends USDT to Bob inside Binance.
+
+That transaction stays off-chain unless:
+
+Bob withdraws to an external wallet → goes on-chain.
+
+Binance itself audits or moves funds → partial on-chain movement.
+
+So no — it may never touch the chain unless someone exits the exchange.
+
+🏛️ In the Pakistan Analogy (SBP = Chain, Local Banks = Off-Chain)
+✅ Yes — if money moves between banks, SBP will see it.
+Example:
+Alice sends PKR 100,000 from HBL to UBL.
+
+Initially:
+
+HBL deducts the amount from Alice’s account (off-chain).
+
+UBL adds it to Bob’s (off-chain).
+
+But: HBL and UBL must settle with each other via SBP's RTGS/PRISM.
+
+That movement between banks is recorded at the SBP (on-chain).
+
+So yes — off-chain activity between banks eventually settles on-chain.
+
+❌ No — if money stays within the same bank.
+Alice → Bob both in Meezan Bank: SBP never sees it.
+
+It’s fully off-chain and may never hit the central ledger unless required for audit or compliance.
+
