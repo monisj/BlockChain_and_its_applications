@@ -1,0 +1,5 @@
+multichain-cli money listaddresstransactions "1VnwujtingCPgeVZy8mZsrv9QEm9vtvhNkTYLz"
+multichain-cli money listaddresstransactions "1798Jc8t1yDucKQedmybe6R6e2Sr3hj3XHR4AE"
+multichain-cli money listaddresstransactions "19UptnQUzYqaRzfDrmzw4GmgFrFoRdq8ReD4Av"
+multichain-cli money listaddresstransactions "15hYeTNgxzvvwM2BDKZEpNEqg59TaxGujco979"
+multichain-cli money listaddresstransactions "1JfWmES7SNudFjnf95KwfJuApghYMaV9epJJpG"
