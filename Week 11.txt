@@ -57,3 +57,10 @@ CoinJoin-Based	Samourai Wallet	Bitcoin	Active
 One point to note:
 Anonymity = pseudoymity + unlinkability
 Different interactions of the same user with the system should not be linkable with each other.
+
+Privacy Features:
+1. Ring Signatures
+2. Stealth addresses
+3. Confidential transactions
+4. zk-SNARKs
+5. Coin Mixing/ CoinJoin
