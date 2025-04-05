@@ -54,3 +54,6 @@ CoinJoin-Based	Wasabi Wallet	Bitcoin	Active (regulated)
 CoinJoin-Based	Samourai Wallet	Bitcoin	Active
 
 
+One point to note:
+Anonymity = pseudoymity + unlinkability
+Different interactions of the same user with the system should not be linkable with each other.
