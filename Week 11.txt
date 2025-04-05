@@ -1,0 +1,56 @@
+Bitcoin and anonymity
+Privacy should be maintained (Information hiding) {anonymity}
+
+What is meant by anonymity?
+A: Refers to the ability of users to participate in transactions (in the context of blockchain)
+without revealing their real-world identities.
+Achieved via cryptographic addresses (Wallet addresses).
+
+Mixer in blockchain
+In the context of blockchain, a mixer (also known as a tumbler) is a privacy-enhancing tool that 
+helps obfuscate the traceability of cryptocurrency transactions.
+
+
+A mixer is a service (centralized or decentralized) that breaks the on-chain link between the sender 
+and the recipient of crypto by mixing coins from many users. After mixing, users receive different coins 
+of the same value (minus a small fee), making it difficult to trace where the funds originally came from.
+
+How Does It Work?
+Centralized Mixers:
+Users deposit their crypto (e.g., BTC) into a pool controlled by the service.
+
+After some time and mixing, they withdraw the same amount (minus a fee) from the pool, but not the exact coins they deposited.
+
+The mixer keeps logs (which could be subpoenaed or leaked), so not completely trustless.
+
+Decentralized Mixers:
+Use smart contracts or cryptographic techniques (like Zero-Knowledge proofs or CoinJoin) to mix funds without needing a trusted party.
+
+Examples:
+
+CoinJoin: Multiple users combine their transactions into a single transaction.
+
+Tornado Cash (Ethereum): Uses zk-SNARKs to allow users to withdraw funds to a new address, with no on-chain link.
+
+🛡️ Why Use a Mixer?
+Privacy: Protect transaction history and wallet balances from being traced.
+
+Anonymity: Useful for individuals who don't want their purchases, donations, or income to be publicly traceable.
+
+Security: Reduces the risk of being targeted due to wealth being visible on-chain.
+
+⚠️ Legal and Ethical Concerns
+Legitimate Privacy Tool: For people who care about financial privacy.
+
+Misuse: Mixers are often associated with money laundering, ransomware, and other illicit activities.
+
+Governments have sanctioned some mixers (e.g., Tornado Cash was sanctioned by the U.S. Treasury in 2022).
+
+🚀 Examples of Mixers
+Mixer Type	Example	Platform	Status
+Centralized	Bitcoin Fog	Bitcoin	Seized
+Decentralized	Tornado Cash	Ethereum	Sanctioned
+CoinJoin-Based	Wasabi Wallet	Bitcoin	Active (regulated)
+CoinJoin-Based	Samourai Wallet	Bitcoin	Active
+
+
