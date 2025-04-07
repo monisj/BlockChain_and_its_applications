@@ -85,6 +85,31 @@ def deploy_to_multichain(route, time, discount, contract_code):
         key, json_payload
     ])
     print(f"Contract for {route} deployed with key: {key}")
+    import os
+
+LOG_FILE = "fare_update_log.json"
+
+def log_deployment(route, time, discount, prompt, contract_code, success=True):
+    log_entry = {
+        "timestamp": datetime.datetime.utcnow().isoformat(),
+        "route": route,
+        "time": time,
+        "discount": discount,
+        "prompt": prompt,
+        "contract_code": contract_code,
+        "status": "Success" if success else "Failed"
+    }
+
+    if not os.path.exists(LOG_FILE):
+        with open(LOG_FILE, 'w') as f:
+            json.dump([log_entry], f, indent=2)
+    else:
+        with open(LOG_FILE, 'r+') as f:
+            logs = json.load(f)
+            logs.append(log_entry)
+            f.seek(0)
+            json.dump(logs, f, indent=2)
+
 
 # === 8. MAIN EXECUTION LOOP ===
 def main():
@@ -107,6 +132,8 @@ def main():
 
         if validate_code(contract_code):
             deploy_to_multichain(features["route"], features["time"], discount, contract_code)
+            log_deployment(features["route"], features["time"], discount, prompt, contract_code, success=True)
+
         else:
             print("Generated contract code is invalid. Skipping deployment.")
     else:

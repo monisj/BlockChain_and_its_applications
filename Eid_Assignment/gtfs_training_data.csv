@@ -1,0 +1,11 @@
+time,passenger_count,vehicle_count,weather,day_type,discount
+08:00,480,6,rainy,weekday,0.1
+09:00,600,5,clear,weekday,0.0
+17:00,300,8,cloudy,weekday,0.2
+20:00,200,10,rainy,weekday,0.3
+22:00,100,9,clear,weekend,0.4
+07:30,550,4,snowy,weekday,0.0
+06:00,350,5,clear,weekend,0.15
+10:30,450,6,rainy,weekday,0.1
+19:00,250,7,cloudy,weekday,0.25
+13:00,700,5,clear,weekend,0.0

@@ -1,0 +1,12 @@
+AI Prompt:
+ Modify the contract for Route R1 at 08:00. If passenger count is below 500 and conditions are: low ridership, rainy weather, weekday, reduce fare by 10%.
+
+[MOCK GPT-4] Generating code from prompt...
+
+Generated Code:
+ def calculate_fare(base_fare, passenger_count, weather, day_type):
+    if passenger_count < 500 and weather == "rainy" and day_type == "weekday":
+        return base_fare * 0.9  # 10% discount
+    return base_fare
+
+Contract for R1 deployed with key: R1_2025-04-07T16:42:38.001243
