@@ -1,0 +1,27 @@
+{
+    "master_address": "19TVh7M9UhbaVtHFKRszrmMoCfLBJmAc2RcUwa",
+    "linked_addresses": [
+      {
+        "address": "13xnXAJysKKqk97mSWoRXBF9NJ3u8ZDH8Havgr",
+        "linked_to": "19TVh7M9UhbaVtHFKRszrmMoCfLBJmAc2RcUwa"
+      },
+      {
+        "address": "1K1N7zH1ErysKyuFstj6fd63JDKy1CgsCgqPJP",
+        "linked_to": "19TVh7M9UhbaVtHFKRszrmMoCfLBJmAc2RcUwa"
+      },
+      {
+        "address": "1RpvXVgHNwvt3n4nSE57HVZywgfvFWH6MTco4Y",
+        "linked_to": "19TVh7M9UhbaVtHFKRszrmMoCfLBJmAc2RcUwa"
+      },
+      {
+        "address": "1YKPgE1Bc5Ch5jtJpRDTosbPacDN9dNiEHsdGf",
+        "linked_to": "19TVh7M9UhbaVtHFKRszrmMoCfLBJmAc2RcUwa"
+      },
+      {
+        "address": "1EJrPjcMMuUUuSFLgcxGhXWacqmxjJB7yRkXee",
+        "linked_to": "19TVh7M9UhbaVtHFKRszrmMoCfLBJmAc2RcUwa"
+      }
+    ],
+    "network": "secret"
+  }
+  

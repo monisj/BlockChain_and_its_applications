@@ -248,3 +248,5 @@ Unblind Signature                |                             |
                                 |  Accept or reject            |
 
 (See Anonymity.pdf)
+Task 1 create 5 address link to a single address via multichain and link them to network x lib via json of multichain in python
+Task 2 blind signature with ceasar cypher
