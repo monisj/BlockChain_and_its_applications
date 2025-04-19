@@ -234,3 +234,17 @@ Validate if the blind signature was from a valid issuance event.
 
 This limits how much damage a rogue signer can cause.
 
+Example Use case (Hospital):
+Patient (Node A)      ->       Doctor (Signer)        ->       Hospital (Node B)
+    |                            |                             |
+Create Record R                  |                             |
+    |--- Blind(R) -------------> |                             |
+    |                            | Sign blindly                |
+    |<-- Blind Signature --------|                             |
+Unblind Signature                |                             |
+    |                            |                             |
+    |---- R + Signature -------> |                             |
+                                |-- Verify with Doctor's key --|
+                                |  Accept or reject            |
+
+(See Anonymity.pdf)
